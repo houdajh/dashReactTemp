@@ -15,16 +15,18 @@ class Customers extends React.Component{
             console.log("mounted")
             db.collection('users').get().then(snapshot=>{
                 const users =[]
+                var size = snapshot.size
                 snapshot.forEach(doc=>{
                     const data = doc.data()
                     users.push(data)
                 })
                 this.setState({users : users})
                 console.log(snapshot)
-                console.log(this.state.users.last_name)
+                console.log(size)
+                
 
             })
-            .catch(error=>console.log(error))
+            
         }
         
         render(){

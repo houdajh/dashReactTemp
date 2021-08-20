@@ -3,7 +3,7 @@ import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
 import Chart from 'react-apexcharts'
-
+import { db } from '../firebase/firebase'
 import { useSelector } from 'react-redux'
 
 import StatusCard from '../components/status-card/StatusCard'
@@ -162,11 +162,20 @@ const renderOrderBody = (item, index) => (
     </tr>
 )
 
-const Dashboard = () => {
+    
 
+ const Dashboard = () => {
     const themeReducer = useSelector(state => state.ThemeReducer.mode)
-
+    const getSize= async() => await  db.collection('users').get().then(snap => {
+       return snap.size 
+        // will return the collection size
+    });
+    // var size = 1;
+    // size = getSize();
+    // console.log(size)
+    // console.log("========")
     return (
+        
         <div>
             <h2 className="page-header">Dashboard</h2>
             <div className="row">
