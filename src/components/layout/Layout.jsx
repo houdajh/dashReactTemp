@@ -29,8 +29,7 @@ const Layout = () => {
     }, [dispatch])
 
     return (
-        <BrowserRouter>
-            <Route render={(props) => (
+         <Route render={(props) => (
                 <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
                     <Sidebar {...props}/>
                     <div className="layout__content">
@@ -41,7 +40,7 @@ const Layout = () => {
                     </div>
                 </div>
             )}/>
-        </BrowserRouter>
+           
     )
 }
 

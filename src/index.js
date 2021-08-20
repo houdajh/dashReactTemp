@@ -3,28 +3,32 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals'
 
 import { createStore } from 'redux'
-
+import { Route, Switch ,BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import rootReducer from './redux/reducers'
-
 import './assets/boxicons-2.0.7/css/boxicons.min.css'
 import './assets/css/grid.css'
 import './assets/css/theme.css'
 import './assets/css/index.css'
-
+import SignIn from './SignIn'
+import Customers from './pages/Customers'
 import Layout from './components/layout/Layout'
 
 const store = createStore(
   rootReducer
 )
 
-document.title = 'Tua CRM'
+document.title = 'Paris JJ'
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <Layout />
+    <BrowserRouter>
+            <Switch><Route path='/' exact component={Layout}/>
+            <Route path='/signIn'exact component={SignIn}/>
+            </Switch>
+     </BrowserRouter>
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')

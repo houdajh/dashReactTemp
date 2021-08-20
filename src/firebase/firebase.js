@@ -3,16 +3,16 @@ import 'firebase/auth';
 import 'firebase/firestore'
 
 var firebaseConfig = {
-    apiKey: "AIzaSyDIpZ8Pp9Zi5tMtRa04ZB0eOZ83BnBSGpo",
-    authDomain: "jjfashion-ea132.firebaseapp.com",
-    projectId: "jjfashion-ea132",
-    storageBucket: "jjfashion-ea132.appspot.com",
-    messagingSenderId: "392860188670",
-    appId: "1:392860188670:web:def20475edd235b60c4aaf"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  export const db = firebase.firestore();
-  
-
-  export default firebase
+    apiKey: "AIzaSyC2Kew8Fb65cB8HZhZ0XsLxe1NsS5yBix8",
+    authDomain: "stage-mobileapp.firebaseapp.com",
+    projectId: "stage-mobileapp",
+    storageBucket: "stage-mobileapp.appspot.com",
+    messagingSenderId: "303185914549",
+    appId: "1:303185914549:web:c71bc57594f09520972cfc",
+    measurementId: "G-N46232DXRJ"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+export const db = firebase.firestore();
+export default firebase
